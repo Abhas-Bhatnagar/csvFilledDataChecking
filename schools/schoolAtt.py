@@ -5,7 +5,7 @@ from os import path
 heading = ["School Name","January","February","March","April","May","June","July","August","September","October","November","December"]
 
 def schoolsIter(schoolName):
-	path = '/home/ab.bhatnagar/Downloads/abhisheak/schools/'+str(schoolName)
+	path = '/home/ab.bhatnagar/Downloads/csvFilledData/schools/'+str(schoolName)
 	files = []
 	for r, d, f in os.walk(path):
 	    for file in f:
@@ -19,10 +19,7 @@ def schoolsIter(schoolName):
 			row_count = len(row_count)
 			# row_count = sum(1 for row in reader)
 			month = f.split('/')[7]
-			if month in data:
-				counter += 1
-			else :
-				counter = 0
+			if not month in data:
 				data[month] = 0
 			if row_count > 1:
 				data[month] += 1
