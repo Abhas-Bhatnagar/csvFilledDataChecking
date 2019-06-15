@@ -5,6 +5,7 @@ from os import path
 heading = ["School Name","January","February","March","April","May","June","July","August","September","October","November","December"]
 
 def schoolsIter(schoolName):
+	# path
 	path = '/home/ab.bhatnagar/Downloads/csvFilledData/schools/'+str(schoolName)
 	files = []
 	for r, d, f in os.walk(path):
@@ -33,6 +34,7 @@ def schoolsIter(schoolName):
 for dirItr in range(len(os.listdir('.'))):
 	schoolName = os.listdir('.')[dirItr]
 	csvRow =  schoolsIter(schoolName)
+	# creating file name
 	fileName = "schoolsAttendance.csv"
 	if len(csvRow) > 1:
 		if path.exists(fileName):
